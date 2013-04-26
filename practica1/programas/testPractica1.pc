@@ -1,0 +1,46 @@
+programa testPractica1;
+	% TEST #1: Pruebas con vectores (declaracion)
+	vector[3] de entero v1, w;  	% OK
+	vector[5] de entero v2; 	% OK
+	vector[5] de entero v3;		% OK
+	vector[0] de entero v4;		% ERROR: el rango debe ser mayor de 1
+	vector[-1] de entero v5;	% ERROR: el rango debe ser mayor de 1
+
+	% TEST #2: Pruebas con vectores
+	accion testVectores;
+		vector[5] de entero a, b, c, d, e;
+		vector[6] de entero v;
+		entero i, j, k;
+	Principio
+	i := j;
+		a[3] := b[0];		% OK
+		a[3] := c[(i*3)+k];	% OK (puede dar alg.n warning, al no estar inicializados i y k
+		d[2] := e[i];		% OK
+		a := b;			% OK
+		a[4] := b[2];		% OK
+		c[4] := b[5];		% ERROR: componente fuera de rango!
+		c[-4] := b[2];		% ERROR: componente fuera de rango!
+		a[i] := b[(j+3)];	% OK
+		
+		a := v;			% ERROR: los vectores tienen rangos diferentes
+
+		escribir(a, a[3]);	% OK
+		escribir(a[5], a[-1]);	% ERROR: acceso fuera de rango
+	Fin
+
+	% TEST #3: Pruebas con paso de par.metros
+	
+	accion porReferencia(ref entero a, b; ref vector[2] de caracter w);	%OK
+	Principio
+		a := b;		% OK
+	Fin
+
+	accion porValor(val entero i; ref entero j);
+	Principio
+		porReferencia(i, j);	% ERROR: La variable i no se puede pasar por referencia
+	Fin
+	
+Principio
+	% NO HACE NADA.
+	escribir('foobar');
+Fin
