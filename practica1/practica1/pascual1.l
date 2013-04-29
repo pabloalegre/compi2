@@ -4,6 +4,7 @@
  *          Analizador lexico de Pascual
  *          2013-03-11
  *             jfabra - Tabla simplificada.
+ *	577511 Pablo Alegre Lara
  **********************************************************************/
 
 #include <stdio.h>

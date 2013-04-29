@@ -1,8 +1,9 @@
-/**********************************************************************
+/***********************************************************************
  * fichero: tabla.h
  *          definiciones de una libreria de manejo de tablas de simbolos
  *          2013-03-11
  *             jfabra - Tabla simplificada.
+ * 577511 Pablo Alegre Lara
  **********************************************************************/
 
 /**********************************************************************/
@@ -47,7 +48,7 @@ typedef struct{
 	TIPO_SIMBOLO tpSimbolo;
 	CLASE_PARAMETRO parametros;
 	/*En caso de ser vectores, sus dimensiones*/
-	int dim1,dim2;
+	int dimension;
 } VARIABLES;
 
 typedef struct {
@@ -69,9 +70,8 @@ typedef struct {
     /* Si accion, lista de parametros */
     LISTA parametros;
 	
-    /* En caso de ser vector o matriz, dimensiones y contenido*/
-	int dim1;
-	int dim2;
+    /* En caso de ser vector, dimensiones y contenido*/
+	int dimension;
 	TIPO_VARIABLE tpContenido;
 	
 	
